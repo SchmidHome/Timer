@@ -70,3 +70,13 @@ bool Timer::tick() {
     }
     return false;
 }
+
+bool Timer::once() {
+    if (!_on) return false;
+    delta();
+    if (tdelta > ttime) {
+        stop();
+        return true;
+    }
+    return false;
+}

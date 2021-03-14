@@ -19,6 +19,7 @@ class Timer {
     unsigned long delta();
     float percent();
     bool tick();  //returns true when Timer is exceeded and resets timer
+    bool once();  //returns true when Timer is exceeded and stops timer
 
     bool operator()() { return tick(); }
     void operator()(const unsigned long time) { setInterval(time); }
