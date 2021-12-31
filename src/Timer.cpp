@@ -61,6 +61,14 @@ float Timer::percent() {
     return P;
 }
 
+bool Timer::elapsed() {
+    if (!_on) return false;
+    delta();
+    if (tdelta >= ttime)
+        return true;
+    return false;
+}
+
 bool Timer::tick() {
     if (!_on) return false;
     delta();
